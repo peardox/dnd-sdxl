@@ -12,6 +12,10 @@ git clone https://github.com/peardox/dnd-sdxl.git
 cd dnd-sdxl
 source ~/dndpy/bin/activate
 pip install torch onnx transformers diffusers accelerate
+
+# The Pi will output "OpenBLAS Warning : Detect OpenMP Loop and this application may hang. Please rebuild the library with USE_OPENMP=1 option." continually
+# while the script runs so send the error output to /dev/null (i.e. 2> /dev/null)
+
 python dnd.py 2> /dev/null
 
 Runtime = 18 hours 7 mins 22 secs
