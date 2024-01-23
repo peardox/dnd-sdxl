@@ -1,0 +1,16 @@
+create AWS G5 instance then log into it and...
+
+add to .bash_rc
+export PATH=$HOME/.local/bin:$PATH
+
+apt-get update
+apt-get upgrade
+apt install python3-pip python-is-python3 nvidia-utils-535 nvidia-driver-535
+pip install torch onnx transformers diffusers accelerate
+git clone https://github.com/peardox/dnd-sdxl.git
+cd dnd-sdxl
+python manyjobs.py
+
+# Reminders to self...
+# 120x120 on 16x9 grid = 144 for tiled HD (for tiled image samples)
+# diffusers==0.23.1 (in case of problems)
