@@ -13,6 +13,16 @@ Windows/Linux will work without a GPU but an NVIDIA Cuda-enabled GPU makes thing
 
 If running Linux with a CUDA card it is important to install the latest driver and set use_cuda to True. A sample setup for an AWS G5 instance is included for reference (the fastest results by a huge margin)
 
+It's worth noting that SDXL doesn't appear to know what many monsters look like. This is best illustrated by running with image_style set to "in the style of a cake". A fair few 'monsters' are rendered just as cakes with no monster in sight. Having said that there are a large number that produce really nice monster cakes :)
+
+Some other ideas for alternate styles can be found in jobs.json and the style can be manually changes in monsters.json (which is quicker if you don't wanna run them all) - the "Plush Toy" version is one of my favourite variants.
+
+Sample outputs from manyjobs.py
+
+=== Fill Me In ===
+
+
+
 Credits
 
 https://github.com/Tabyltop/CC-SRD for [Monsters-SRD5.1-CCBY4.0License-TT.json](https://github.com/Tabyltop/CC-SRD/blob/main/Monsters-SRD5.1-CCBY4.0License-TT.json) as a source of Monster names
