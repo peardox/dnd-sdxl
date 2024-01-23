@@ -1,0 +1,14 @@
+# Mac Mini M2-Pro 16Gb with MacOS Ventura 13.5 ARM-64bit tested (it was the only one I could lay my hands on when testing)
+
+# Go to python.org and download python 3.11.x (3.12 noit supported while testing)
+# Once installed it should be noted that on the Mac you must use the command python3 (confusing when you come from another OS)
+
+# Open terminal
+
+git clone https://github.com/peardox/dnd-sdxl.git
+cd dnd-sdxl
+pip install torch onnx transformers diffusers accelerate
+
+python dnd.py
+
+Runtime = 0 hours 45 mins 0 secs
