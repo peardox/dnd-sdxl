@@ -1,0 +1,17 @@
+# Pi5 8Gb with Bookworm 64bit tested (larger swapfile required)
+
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install python3-full
+sudo nano /etc/dphys-swapfile
+CONF_SWAPSIZE=2048
+sudo reboot
+
+python -m venv ~/dndpy # Only do this once, the source command below uses what this does
+git clone https://github.com/peardox/dnd-sdxl.git
+cd dnd-sdxl
+source ~/dndpy/bin/activate
+pip install torch onnx transformers diffusers accelerate
+python dnd.py 2> /dev/null
+
+Runtime = 18 hours 7 mins 22 secs

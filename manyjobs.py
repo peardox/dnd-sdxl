@@ -28,9 +28,6 @@ image_style = "from Dungeons and Dragons"
 append_to_name = ["Black Pudding", "Roper", "Rug of Smothering", "Vrock"]
 appended_text = "monster"
 
-# Get start time
-start_time = time.time()
-
 # If input_name_file doesn't exist we can't run
 if not os.path.isfile(input_name_file):
     print("Can't find", input_name_file, "so bailing out")
@@ -58,6 +55,9 @@ data = json.load(open(input_name_file))
 
 # Load jobs list
 jobs = json.load(open(jobs_file))
+
+# Get start time
+start_time = time.time()
 
 # Iterate through the json jobs list
 for job in jobs['job']:
