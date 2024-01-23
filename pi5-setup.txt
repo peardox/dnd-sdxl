@@ -1,4 +1,5 @@
 # Pi5 8Gb with Bookworm 64bit tested (larger swapfile required)
+# A 16Gb Pi5 would be faster and likely not need swap (but they're not out yet)
 
 sudo apt-get update
 sudo apt-get upgrade
@@ -15,6 +16,7 @@ pip install torch onnx transformers diffusers accelerate
 
 # The Pi will output "OpenBLAS Warning : Detect OpenMP Loop and this application may hang. Please rebuild the library with USE_OPENMP=1 option." continually
 # while the script runs so send the error output to /dev/null (i.e. 2> /dev/null)
+# This issue could be resolved by re-building OpenMP (as the message says) - it'd probably lead to a marginal speed increase.
 
 python dnd.py 2> /dev/null
 
