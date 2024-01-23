@@ -3,9 +3,10 @@ import os
 import time
 import math
 import json
+import torch
 from diffusers import DiffusionPipeline
 
-# List of pip imports for CUDA
+# List of pip imports for CUDA (from PyTorch site)
 # pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 # pip install onnx transformers diffusers accelerate
 
@@ -18,7 +19,11 @@ output_image_dir = "dnd"
 image_height = 512
 image_width = 512
 image_type = "jpg"
-use_cuda = False # Mainly for PCs with non-NVIDIA cards and Macs. Probably irrelevant but included 'just in case'
+# use_cuda is mainly for Linux with NVIDIA cards. 
+# Probably irrelevant for Windows but included 'just in case'
+use_cuda = False 
+# Tell it we're on a Apple Mac with ARM CPU
+use_macm1 = False 
 image_style = "from Dungeons and Dragons"
 
 
@@ -44,9 +49,11 @@ if not os.path.isdir(output_image_dir):
     os.makedirs(output_image_dir);
 
 # Load SDXL Turbo model
-if use_cuda:
+if use_cuda: # CUDA
     pipe = DiffusionPipeline.from_pretrained("stabilityai/sdxl-turbo").to("cuda")
-else:
+elif use_macm1: #Mac ARM
+    pipe = DiffusionPipeline.from_pretrained("stabilityai/sdxl-turbo").to("mps")
+else: # Something else
     pipe = DiffusionPipeline.from_pretrained("stabilityai/sdxl-turbo")
 
 # Load monster list
