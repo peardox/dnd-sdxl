@@ -14,7 +14,7 @@ from diffusers import DiffusionPipeline
 
 # Configuration
 input_name_file = "monsters.json"
-output_image_dir = "dnd"
+output_image_dir = "monsters"
 image_height = 512
 image_width = 512
 image_type = "jpg"

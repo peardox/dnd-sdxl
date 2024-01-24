@@ -15,13 +15,12 @@ from diffusers import DiffusionPipeline
 # SubDirectory for images
 jobs_file = "jobs.json"
 input_name_file = "monsters.json"
-output_image_dir = "dnd"
+output_image_dir = "styles"
 image_height = 512
 image_width = 512
 image_type = "jpg"
 use_cuda = False # use_cuda is mainly for servers with NVIDIA cards. Probably irrelevant for Windows but included 'just in case'
 big_mac = False # big_mac enables Mac-ARM to use more memory. If you've got an e.g. an M1 with 8G RAM or an x86 Mac then this should be false
-image_style = "from Dungeons and Dragons"
 
 
 append_to_name = ["Black Pudding", "Roper", "Rug of Smothering", "Vrock"]
@@ -37,11 +36,9 @@ if not os.path.isfile(jobs_file):
     print("Can't find", jobs_file, "so bailing out")
     sys.exit()
 
-try:
-    image_style
-except NameError:
-    print("No image_style set so bailing out")
-    sys.exit()
+# If output_image_dir doesn't exists create it
+if not os.path.isdir(output_image_dir):
+    os.makedirs(image_dir);
 
 # Load SDXL Turbo model
 if use_cuda: # CUDA
@@ -62,12 +59,12 @@ start_time = time.time()
 
 # Iterate through the json jobs list
 for job in jobs['job']:
-    output_image_dir = job["dir"]
+    job_image_dir = job["dir"]
     image_style =  job["style"]
     
-    # If output_image_dir doesn't exists create it
-    if not os.path.isdir(output_image_dir):
-        os.makedirs(output_image_dir);
+    # If output_image_dir/job_image_dir doesn't exists create it
+    if not os.path.isdir(output_image_dir + "/" + job_image_dir):
+        os.makedirs(output_image_dir + "/" + job_image_dir);
 
     # Iterate through the json monster list
     for mname in data['monsters']:
@@ -83,7 +80,7 @@ for job in jobs['job']:
             guidance_scale=0.0,
         )
         imga = results.images[0]
-        imga.save(output_image_dir + "/" + mname.replace(" ", "_") + "." + image_type)
+        imga.save(output_image_dir + "/" + job_image_dir + "/" + mname.replace(" ", "_") + "." + image_type)
 
 # Get elapsed time
 elapsed_time = round(time.time()-start_time)

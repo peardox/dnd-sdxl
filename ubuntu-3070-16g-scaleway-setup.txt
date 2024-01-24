@@ -1,4 +1,9 @@
-create AWS G5 instance with a minumum 30G disk space then log into it and...
+create 3070-S GPU instance on Paris-2 with 125G disk space (min allowed) then log into it and...
+# Cost 0.98 eu / hour (only up for 45 mins)
+
+# note the 3070 will fail OOM if cuda used so must need 10G+?
+
+# possibly create a user?
 
 add to .bash_rc
 export PATH=$HOME/.local/bin:$PATH
@@ -14,7 +19,9 @@ git clone https://github.com/peardox/dnd-sdxl.git
 cd dnd-sdxl
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 pip install torch onnx transformers diffusers accelerate
-enable cuda in manyjobs.py (use_cuda = True)
-python manyjobs.py
+[leave use_cuda = False (not enough GPU memory)]
+python dnd.py
 
-Runtime = 0 hours 12 mins 50 secs
+dnd.py Runtime = 0 hours 27 mins 45 secs
+
+# ls -la --time-style=+"%Y-%m-%d %H:%M:%S" dnd/* | wc

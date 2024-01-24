@@ -1,0 +1,24 @@
+# Lenovo Legion Pro 5 Laptop with Windows 11 64bit, AMD 7745HX CPU, 32Gb RAM and a NVIDIA 4070
+
+# Go to https://git-scm.com/download/win, download the installer and install it
+
+# Go to python.org and download python 3.11.x (3.12 not supported while testing)
+# Make sure that when you install it you tick "Add to Path"
+
+# Open Powershell
+
+git clone https://github.com/peardox/dnd-sdxl.git
+
+cd dnd-sdxl
+# If you have a NVIDIA GPU (GeForce GTX 750 or better) then...
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+pip install onnx transformers diffusers accelerate
+
+# If you DON'T have a NVIDIA GPU (or you do and it's really old) then...
+pip install torch onnx transformers diffusers accelerate
+
+python dnd.py
+
+dnd.py Runtime = 0 hours 53 mins 35 secs
+manyjobs.py Runtime = 10 hours 43 mins 0 secs (Calculated)
+Cinebench = 16824 Multi : 1572 Single : 10.70x MP Ratio
