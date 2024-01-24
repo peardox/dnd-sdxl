@@ -1,0 +1,20 @@
+# Mac Mini M1 8Gb with MacOS Ventura 13.5 ARM-64bit tested
+# Cost 2.64 eu
+
+# Go to python.org and download python 3.11.x (3.12 not supported while testing)
+# Once installed it should be noted that on the Mac you must use the command python3 (confusing when you come from another OS)
+
+# Open terminal
+
+git clone https://github.com/peardox/dnd-sdxl.git
+cd dnd-sdxl
+pip3 install --upgrade pip
+pip install torch onnx transformers diffusers accelerate
+
+python3 dnd.py
+
+dnd.py Runtime = 0 hours 10 mins 21 secs
+manyjobs.py Runtime = 11 hours 19 mins 4 secs
+Cinebench = 7771 Multi : 1522 Single : 5.11x MP Ratio
+
+Hot dnd.py Runtime = 2 hours 10 mins 21 secs

@@ -3,7 +3,6 @@ import os
 import time
 import math
 import json
-import torch
 from diffusers import DiffusionPipeline
 
 # List of pip imports for CUDA (from PyTorch site)
@@ -20,6 +19,7 @@ image_height = 512
 image_width = 512
 image_type = "jpg"
 use_cuda = False # use_cuda is mainly for Linux with NVIDIA cards. Probably irrelevant for Windows but included 'just in case'
+big_mac = False # big_mac enables Mac-ARM to use more memory. If you've got an e.g. an M1 with 8G RAM or an x86 Mac then this should be false
 image_style = "from Dungeons and Dragons"
 
 
@@ -44,6 +44,8 @@ if not os.path.isdir(output_image_dir):
 # Load SDXL Turbo model
 if use_cuda: # CUDA
     pipe = DiffusionPipeline.from_pretrained("stabilityai/sdxl-turbo").to("cuda")
+elif big_mac: # Mac ARM with > 16G RAM
+    pipe = DiffusionPipeline.from_pretrained("stabilityai/sdxl-turbo").to("mps")
 else: # Something else
     pipe = DiffusionPipeline.from_pretrained("stabilityai/sdxl-turbo")
 

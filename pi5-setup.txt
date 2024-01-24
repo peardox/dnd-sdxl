@@ -20,4 +20,4 @@ pip install torch onnx transformers diffusers accelerate
 
 python dnd.py 2> /dev/null
 
-Runtime = 18 hours 7 mins 22 secs
+dnd.py Runtime = 20 hours 56 mins 6 secs
