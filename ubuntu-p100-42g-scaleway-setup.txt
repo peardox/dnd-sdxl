@@ -1,0 +1,50 @@
+# Create RENDER-S GPU  (P100) instance with 125G disk space (min allowed) then log into it
+# Note that this option has a P100 GPU with 16GB memory
+# Cost 1.27 eu for about an hour
+
+# possibly create a user?
+
+# add to .bash_rc
+export PATH=$HOME/.local/bin:$PATH
+
+source .bash_rc
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install python3-pip python-is-python3 
+sudo reboot
+
+nvidia-smi # (To check the card's there now)
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.154.05             Driver Version: 535.154.05   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  Tesla P100-PCIE-16GB           On  | 00000000:01:00.0 Off |                    0 |
+| N/A   55C    P0             196W / 250W |  15180MiB / 16384MiB |     98%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A      1635      C   python                                    15178MiB |
++---------------------------------------------------------------------------------------+
+
+git clone https://github.com/peardox/dnd-sdxl.git
+cd dnd-sdxl
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+pip install onnx transformers diffusers accelerate
+nano config.py
+# Set use_cuda = True
+python dnd.py
+python manyjobs.py
+
+# dnd.py Runtime = 0 hours 1 mins 46 secs
+# manyjobs.py Runtime = 0 hours 22 mins 46 secs
+
+cd
+zip -r p100 dnd-sdxl/*
