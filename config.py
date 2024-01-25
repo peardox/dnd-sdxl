@@ -6,10 +6,10 @@
 
 # The json file containing the list of monsters (or whatever)
 input_name_file = "monsters.json"
-# Height of each output image
-image_height = 512
-# Width of each output image
+# Width of each output image - must be divisible by 8
 image_width = 512
+# Height of each output image - must be divisible by 8
+image_height = 512
 # Type of image to save as (jpg or png)
 image_type = "jpg"
 # use_cuda is mainly for servers with NVIDIA cards. Probably irrelevant for Windows 10/11 but included 'just in case'
@@ -41,3 +41,21 @@ dnd_image_style = "from Dungeons and Dragons"
 
 jobs_file = "jobs.json"
 jobs_image_dir = "jobs"
+
+#########################################
+#                                       #
+# Check image_width and image_height    #
+# are both divisible by 8 (or SDXL will #
+# throw an error)                       #
+#                                       #
+#########################################
+
+# Check image_width is divisible by 8
+if (image_width % 8) != 0:
+    print("image_width must be divisible by 8 in config.py so bailing out")
+    sys.exit()
+    
+# Check image_height is divisible by 8
+if (image_height % 8) != 0:
+    print("image_height must be divisible by 8 in config.py so bailing out")
+    sys.exit()
