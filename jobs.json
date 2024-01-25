@@ -3,17 +3,11 @@
             "dir": "dnd",
             "style": "from Dungeons and Dragons"
         }, {
-            "dir": "plush",
-            "style": "in the style of a plush toy"
-        }, {
-            "dir": "statue",
-            "style": "in the style of a statue"
+            "dir": "abstract",
+            "style": "in the style of abstract art"
         }, {
             "dir": "cake",
             "style": "in the style of a cake"
-        }, {
-            "dir": "abstract",
-            "style": "in the style of abstract art"
         }, {
             "dir": "cave",
             "style": "as a cave painting"
@@ -21,23 +15,29 @@
             "dir": "emoji",
             "style": "as an emoji"
         }, {
+            "dir": "glass",
+            "style": "as stained glass"
+        }, {
             "dir": "line",
             "style": "as line art"
         }, {
             "dir": "minecraft",
             "style": "in the style of minecraft"
         }, {
+            "dir": "moon",
+            "style": "in a spacesuit, playing a guitar, on the moon"
+        }, {
             "dir": "pixel",
             "style": "in the style of pixel art"
         }, {
-            "dir": "glass",
-            "style": "as stained glass"
+            "dir": "plush",
+            "style": "in the style of a plush toy"
+        }, {
+            "dir": "statue",
+            "style": "in the style of a statue"
         }, {
             "dir": "water",
             "style": "in the style of watercolour"
-        }, {
-            "dir": "moon",
-            "style": "in a spacesuit, playing a guitar, on the moon"
         }
     ]
 }
