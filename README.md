@@ -10,7 +10,7 @@ A Python Script to automate the creation of DND artwork from SRD-OGL-CC-BY-4.0 u
 This Python script takes a list of things to draw (monsters.json) then uses SDXL Turbo to create all the images by running python dnd.py
 </p>
 <p>
-The alternative script manyjobs.py extends dnd.py to also take input from jobs.json to run the same set of image generations with slightly differing qualifiers. The supplied jobs.json does 12 different syles placing each set of outputs in a new sub-directory - edit jobs.json to alter if you so desire - it's fairly self-evident what's needed. One obvious use alternate use for jobs.json is to run the same set multiple times to obtain many variations in the same style.
+The alternative script manyjobs.py extends dnd.py to also take input from jobs.json to run the same set of image generations with slightly differing qualifiers. The supplied jobs.json does 12 different syles (plus the obligatory 'playing a guitar on the moon') placing each set of outputs in a new sub-directory - edit jobs.json to alter if you so desire - it's fairly self-evident what's needed. One obvious use alternate use for jobs.json is to run the same set multiple times to obtain many variations in the same style.
 </p>
 <p>
 Both scripts have configuration sections near the top. The only option that really needs explaining is "append_to_name" - this one is a simple list of things in monsters.json that don't quite work as desired, e.g. Black Pudding creates an image of a [Black Pudding](https://en.wikipedia.org/wiki/Black_pudding) rather than the DnD monster [Black Pudding](https://www.dndbeyond.com/monsters/16808-black-pudding) so the text in "appended_text" just below is added to the SDXL request - it's still far from perfect but not nearly as bad.
