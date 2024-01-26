@@ -1,7 +1,7 @@
 # dnd-sdxl
 <p align="center">
 	<img src="images\roper.jpg" alt="roper" style="zoom:50%;" />
-    It even makes cakes :)
+    <br />It even makes cakes :)
 </p>
 
 <p>
