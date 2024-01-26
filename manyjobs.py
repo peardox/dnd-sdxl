@@ -1,3 +1,18 @@
+#########################################
+#                                       #
+# ManyJobs.py                           #
+#                                       #
+# This script takes the list of         #
+# monsters in monsters.json and         #
+# the pairs of directories / styles     #
+# in jobs.json and creates images based #
+# on the comination of both             #
+#                                       #
+# Confugure this script in config.py    #
+# to alter any of the presets           #
+#                                       #
+#########################################
+
 # General system imports
 import sys
 import os

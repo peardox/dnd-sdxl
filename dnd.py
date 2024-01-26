@@ -1,3 +1,16 @@
+#########################################
+#                                       #
+# DnD.py                                #
+#                                       #
+# This script takes the list of         #
+# monsters in monsters.json and         #
+# creates an image for each one         #
+#                                       #
+# Confugure this script in config.py    #
+# to alter any of the presets           #
+#                                       #
+#########################################
+
 # General system imports
 import sys
 import os
