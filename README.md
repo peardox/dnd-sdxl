@@ -1,11 +1,10 @@
 # dnd-sdxl
+<p>
+A Python Script to automate the creation of DND artwork from SRD-OGL-CC-BY-4.0 using SDXL Turbo
+</p>
 <p align="center">
 	<img src="images\roper.jpg" alt="roper" style="zoom:50%;" />
     <br />It even makes cakes :)
-</p>
-
-<p>
-A Python Script to automate the creation of DND artwork from SRD-OGL-CC-BY-4.0 using SDXL Turbo
 </p>
 <p>
 This Python script takes a list of things to draw (monsters.json) then uses SDXL Turbo to create all the images by running python dnd.py
