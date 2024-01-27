@@ -13,7 +13,7 @@ image_width = 512
 image_height = 512
 # Type of image to save as (jpg or png)
 image_type = "jpg"
-# use_cuda is machines with LARGE NVIDIA cards (16G or better).
+# use_cuda is for machines with LARGE NVIDIA cards (16G or better).
 # If you get an out of memory error with this set to True just
 # change it to False - this happens if your GPU don't have enough RAM
 use_cuda = False
