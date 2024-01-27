@@ -1,10 +1,9 @@
 # Create an AWS G5.xlarge/G5.2xlarge Windows Server instance with a minumum 60G disk space then log into it
 # Note that this option has a 24Gb GPU and 16Gb of RAM (although I actually used the G5.2xlarge 32Gb RAM version)
 # These instances also have extra drive space but we're not going to use it (you can't boot off of it)
-# Cost 1.19 usd / hour + 3.00 usd / month disk (2xlarge = 1.58 usd / hour)
+# Cost 1.19 usd / hour + 6.00 usd / month disk (2xlarge = 1.58 usd / hour)
 
-# Grab driver from https://www.nvidia.com/download/driverResults.aspx/217145/en-us/
-# Reboot (to make 100% sure drivers there)
+# Install driver from https://www.nvidia.com/download/driverResults.aspx/217145/en-us/
 
 # Go to https://git-scm.com/download/win, download the installer and install it
 
@@ -17,14 +16,11 @@
 git clone https://github.com/peardox/dnd-sdxl.git
 
 cd dnd-sdxl
-# If you have a NVIDIA GPU (GeForce GTX 750 or better) then...
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+# As this is an A10 NVIDIA GPU (with 24G RAM) ...
+pip install torch --index-url https://download.pytorch.org/whl/cu121
 pip install onnx transformers diffusers accelerate
 
-# If you DON'T have a NVIDIA GPU (or you do and it's really old) then...
-pip install torch onnx transformers diffusers accelerate
-
-# Right click on config.py then select edit with Idle
+# Right click on config.py then select Edit with Idle
 # Set use_cuda = True
 # Close Idle saving the modification
 

@@ -12,14 +12,14 @@ git clone https://github.com/peardox/dnd-sdxl.git
 
 cd dnd-sdxl
 
-# If you have a NVIDIA GPU (GeForce GTX 750 or better) with lots of RAM (the more the better) then...
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+# If you have a NVIDIA GPU with 16G of RAM (or more) then...
+pip install torch --index-url https://download.pytorch.org/whl/cu121
 pip install onnx transformers diffusers accelerate
 # Open config.py in a text editor
 # Set use_cuda = True
 # Save the modification, Close Editor
 
-# If you DON'T have a NVIDIA GPU (or you do and it's really old / not much RAM) then...
+# If you DON'T have a NVIDIA GPU (or it has less than 16G RAM) then...
 pip install torch onnx transformers diffusers accelerate
 
 python dnd.py

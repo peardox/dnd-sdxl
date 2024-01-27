@@ -11,15 +11,17 @@ The alternative script manyjobs.py extends dnd.py to also take input from jobs.j
 
 Configuration is altered via config.py. The only option that really needs explaining is "append_to_name" - this one is a simple list of things in monsters.json that don't quite work as desired, e.g. Black Pudding creates an image of a [Black Pudding](https://en.wikipedia.org/wiki/Black_pudding) rather than the DnD monster [Black Pudding](https://www.dndbeyond.com/monsters/16808-black-pudding) so the text in "appended_text" just below is added to the SDXL request - it's still far from perfect but not nearly as bad.
 
-preftech.py is intended to allow users with VERY SLOW Broadband to do the model download required by SDXL before running the main scripts (it can take a long time)    
+preftech.py is intended to allow users with SLOWER Broadband to do the model download required by SDXL before running the main scripts (it can take a long time)    
 
 The SetupSamples directory has some notes on setup for specific platforms
 
 Works on Windows, Mac , Linux and Raspberry Pi5 (tested all four - Pi5 is dreadful... needs more RAM which would probably be quite usable - not available when writing this though)
 
-Windows/Linux will work without a GPU but an NVIDIA Cuda-enabled GPU makes things run much faster. Without a supported GPU it will work but 16Gb RAM is really needed (it will work in 8Gb but you won't like it...)
+Windows/Linux will work without a GPU but a NVIDIA GPU with 16G (or more) makes things run extremely fast.
 
-If running Linux with a CUDA card it is important to install the latest driver and set use_cuda to True. A sample setup for an AWS G5 instance is included for reference (the fastest results by a huge margin)
+Without a supported GPU it will work but 16G RAM is really needed (it will work in 8G but you won't like it...)
+
+If running Linux with a NVIDIA card with 16G or better RAM it is important to install the latest driver and set use_cuda to True. Sample setups for AWS G5 (A10/24) and Scaleway Render-S (P100/16) instances is included for reference (the fastest results by a huge margin)
 
 It's worth noting that SDXL doesn't appear to know what many monsters look like. This is best illustrated by running with image_style set to "in the style of a cake". A fair few 'monsters' are rendered just as cakes with no monster in sight. Having said that there are a large number that produce really nice monster cakes :)
 

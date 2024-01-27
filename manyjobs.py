@@ -24,8 +24,8 @@ import config
 # import SDXL Turbo model
 from diffusers import DiffusionPipeline
 
-# List of pip imports for CUDA (from PyTorch site)
-# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+# List of pip imports for CUDA (from PyTorch site - Check https://pytorch.org/get-started/locally/)
+# pip install torch --index-url https://download.pytorch.org/whl/cu121
 # pip install onnx transformers diffusers accelerate
 
 # List of pip imports if not using CUDA

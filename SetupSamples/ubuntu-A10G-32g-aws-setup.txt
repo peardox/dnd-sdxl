@@ -35,7 +35,7 @@ nvidia-smi
 
 git clone https://github.com/peardox/dnd-sdxl.git
 cd dnd-sdxl
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+pip install torch --index-url https://download.pytorch.org/whl/cu121
 pip install onnx transformers diffusers accelerate
 nano config.py
 # Set use_cuda = True
