@@ -1,3 +1,4 @@
+import sys # Needed For final error check 
 #########################################
 #                                       #
 # Global Configuration                  #
