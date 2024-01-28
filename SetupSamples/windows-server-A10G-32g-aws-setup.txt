@@ -29,6 +29,6 @@ python manyjobs.py # (optional)
 
 dnd.py Runtime = 0 hours 1 mins 0 secs
 manyjobs.py Runtime = 0 hours 12 mins 48 secs
-Cinebench = 16824 Multi : 1572 Single : 10.70x MP Ratio
+
 
 

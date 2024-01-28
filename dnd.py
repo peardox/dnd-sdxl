@@ -59,23 +59,29 @@ data = json.load(open(config.input_name_file))
 # Get start time
 start_time = time.time()
 
-# Iterate through the json monster list
-for mname in data['monsters']:
-    if mname in config.append_to_name:
-        image_of = mname + " " + config.appended_text
-    else:
-        image_of = mname
-    # Generate image based on constructed prompt
-    results = pipe(
-        prompt = "A " + image_of + " " + config.dnd_image_style,
-        height=config.image_height, 
-        width=config.image_width,
-        num_inference_steps=1,
-        guidance_scale=0.0,
-    )
-    imga = results.images[0]
-    # Save image then do the next one
-    imga.save(config.dnd_image_dir + "/" + mname.replace(" ", "_") + "." + config.image_type)
+# Keep a look out for Ctl-C
+try:
+    # Iterate through the json monster list
+    for mname in data['monsters']:
+        if mname in config.append_to_name:
+            image_of = mname + " " + config.appended_text
+        else:
+            image_of = mname
+        # Generate image based on constructed prompt
+        results = pipe(
+            prompt = "A " + image_of + " " + config.dnd_image_style,
+            height=config.image_height, 
+            width=config.image_width,
+            num_inference_steps=1,
+            guidance_scale=0.0,
+        )
+        imga = results.images[0]
+        # Save image then do the next one
+        imga.save(config.dnd_image_dir + "/" + mname.replace(" ", "_") + "." + config.image_type)
+
+# User hit Ctl-C so perform a clean exit
+except KeyboardInterrupt:
+    pass
 
 # Get elapsed time
 elapsed_time = round(time.time()-start_time)

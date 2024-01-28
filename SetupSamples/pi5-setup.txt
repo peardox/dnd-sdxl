@@ -3,7 +3,7 @@
 
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install python3-full
+sudo apt-get install python3-full 
 sudo nano /etc/dphys-swapfile
 CONF_SWAPSIZE=2048
 sudo reboot
@@ -16,7 +16,7 @@ pip install torch onnx transformers diffusers accelerate
 
 # The Pi will output "OpenBLAS Warning : Detect OpenMP Loop and this application may hang. Please rebuild the library with USE_OPENMP=1 option." continually
 # while the script runs so send the error output to /dev/null (i.e. 2> /dev/null)
-# This issue could be resolved by re-building OpenMP (as the message says) - it'd probably lead to a marginal speed increase.
+# This issue could be resolved by re-building OpenBLAS (as the message says) - it'd probably lead to a marginal speed increase.
 
 python dnd.py 2> /dev/null
 
