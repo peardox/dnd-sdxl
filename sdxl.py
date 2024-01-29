@@ -1,6 +1,6 @@
 #########################################
 #                                       #
-# DnD.py                                #
+# sdxl.py                                #
 #                                       #
 # This script takes the list of         #
 # monsters in monsters.json and         #

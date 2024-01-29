@@ -11,8 +11,8 @@ cd dnd-sdxl
 pip3 install --upgrade pip
 pip install torch onnx transformers diffusers accelerate
 
-python3 dnd.py
+python3 sdxl.py
 
-dnd.py Runtime = 2 hours 17 mins 33 secs
+sdxl.py Runtime = 2 hours 17 mins 33 secs
 manyjobs.py Runtime = 27 hours 30 mins 36 secs (Calculated)
 Cinebench = 7771 Multi : 1522 Single : 5.11x MP Ratio

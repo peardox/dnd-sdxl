@@ -5,9 +5,9 @@ A Python Script to automate the creation of DND artwork from SRD-OGL-CC-BY-4.0 u
 	<img src="images\roper.jpg" alt="roper" style="zoom:50%;" />
     <br />It even makes cakes :)
 </p>
-This Python script takes a list of things to draw (monsters.json) then uses SDXL Turbo to create all the images by running python dnd.py
+This Python script takes a list of things to draw (monsters.json) then uses SDXL Turbo to create all the images by running python sdxl.py
 
-The alternative script manyjobs.py extends dnd.py to also take input from jobs.json to run the same set of image generations with slightly differing qualifiers. The supplied jobs.json does 12 different syles (plus the obligatory 'playing a guitar on the moon') placing each set of outputs in a new sub-directory - edit jobs.json to alter if you so desire - it's fairly self-evident what's needed. One obvious use alternate use for jobs.json is to run the same set multiple times to obtain many variations in the same style.
+The alternative script manyjobs.py extends sdxl.py to also take input from jobs.json to run the same set of image generations with slightly differing qualifiers. The supplied jobs.json does 12 different syles (plus the obligatory 'playing a guitar on the moon') placing each set of outputs in a new sub-directory - edit jobs.json to alter if you so desire - it's fairly self-evident what's needed. One obvious use alternate use for jobs.json is to run the same set multiple times to obtain many variations in the same style.
 
 An NVIDIA GPU with 16G or more RAM is required for the best performance.
 

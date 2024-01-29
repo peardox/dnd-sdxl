@@ -42,10 +42,10 @@ pip install torch --index-url https://download.pytorch.org/whl/cu121
 pip install onnx transformers diffusers accelerate
 nano config.py
 # Set use_cuda = True
-python dnd.py
+python sdxl.py
 python manyjobs.py # (optional)
 
-# dnd.py Runtime = 0 hours 1 mins 46 secs
+# sdxl.py Runtime = 0 hours 1 mins 46 secs
 # manyjobs.py Runtime = 0 hours 22 mins 46 secs
 
 cd

@@ -23,7 +23,7 @@
 #                                       #
 # Basically run this then go watch a    #
 # film, go to bed or whatever while     #
-# this runs then you can run dnd.py     #
+# this runs then you can run sdxl.py    #
 # or manyjobs.py without a very long    #
 # wait (possibly several hours)         #
 #                                       #

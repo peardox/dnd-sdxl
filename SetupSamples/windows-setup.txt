@@ -22,9 +22,9 @@ pip install onnx transformers diffusers accelerate
 # If you DON'T have a NVIDIA GPU (or it has less than 16G RAM) then...
 pip install torch onnx transformers diffusers accelerate
 
-python dnd.py
+python sdxl.py
 
-dnd.py Runtime = 0 hours 53 mins 35 secs
+sdxl.py Runtime = 0 hours 53 mins 35 secs
 manyjobs.py Runtime = 10 hours 43 mins 0 secs (Calculated)
 Cinebench = 16824 Multi : 1572 Single : 10.70x MP Ratio
 

@@ -37,7 +37,7 @@ repeat_count = 1
 
 #########################################
 #                                       #
-# Configuration specific to dnd.py      #
+# Configuration specific to sdxl.py     #
 #                                       #
 #########################################
 
@@ -80,5 +80,5 @@ if repeat_count > 999:
     sys.exit()
 
 if type(repeat_count) != int:
-    print("repeat_count must be a whole number (no decimal) in config.py so bailing out")
+    print("repeat_count must be a whole number in config.py so bailing out")
     sys.exit()

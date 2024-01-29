@@ -18,6 +18,6 @@ pip install torch onnx transformers diffusers accelerate
 # while the script runs so send the error output to /dev/null (i.e. 2> /dev/null)
 # This issue could be resolved by re-building OpenBLAS (as the message says) - it'd probably lead to a marginal speed increase.
 
-python dnd.py 2> /dev/null
+python sdxl.py 2> /dev/null
 
-dnd.py Runtime = 20 hours 56 mins 6 secs
+sdxl.py Runtime = 20 hours 56 mins 6 secs
