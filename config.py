@@ -29,6 +29,12 @@ append_to_name = ["Black Pudding", "Roper", "Rug of Smothering", "Vrock"]
 # appended_text is added after any names (above) to provide better results
 appended_text = "monster"
 
+# repeat_count = how many versions of the monster to create
+# If 1 then output file is <monster>.<image_type> 
+# If >1 then output file is <monster>_<nnn>.<image_type> 
+
+repeat_count = 1
+
 #########################################
 #                                       #
 # Configuration specific to dnd.py      #
@@ -63,4 +69,16 @@ if (image_width % 8) != 0:
 # Check image_height is divisible by 8
 if (image_height % 8) != 0:
     print("image_height must be divisible by 8 in config.py so bailing out")
+    sys.exit()
+
+if repeat_count < 1:
+    print("repeat_count must be at least 1 in config.py so bailing out")
+    sys.exit()
+
+if repeat_count > 999:
+    print("repeat_count must be at most 999 in config.py so bailing out")
+    sys.exit()
+
+if type(repeat_count) != int:
+    print("repeat_count must be a whole number (no decimal) in config.py so bailing out")
     sys.exit()

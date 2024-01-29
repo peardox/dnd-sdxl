@@ -79,17 +79,22 @@ try:
                 image_of = mname + " " + config.appended_text
             else:
                 image_of = mname
-            # Generate image based on constructed prompt
-            results = pipe(
-                prompt = "A " + image_of + " " + image_style,
-                height=config.image_height, 
-                width=config.image_width,
-                num_inference_steps=1,
-                guidance_scale=0.0,
-            )
-            imga = results.images[0]
-            # Save image then do the next one
-            imga.save(config.jobs_image_dir + "/" + job_image_dir + "/" + mname.replace(" ", "_") + "." + config.image_type)
+            # Loop repeat_count times (may be once)
+            for variant in range(config.repeat_count):
+                # Generate image based on constructed prompt
+                results = pipe(
+                    prompt = "A " + image_of + " " + image_style,
+                    height=config.image_height, 
+                    width=config.image_width,
+                    num_inference_steps=1,
+                    guidance_scale=0.0,
+                )
+                imga = results.images[0]
+                # Save image then do the next one
+                if config.repeat_count > 1:
+                    imga.save(config.jobs_image_dir + "/" + job_image_dir + "/" + mname.replace(" ", "_") + "_" + f"{variant+1:03}" + "." + config.image_type)
+                else:
+                    imga.save(config.jobs_image_dir + "/" + job_image_dir + "/" + mname.replace(" ", "_") + "." + config.image_type)
 
 # User hit Ctl-C so perform a clean exit
 except KeyboardInterrupt:
